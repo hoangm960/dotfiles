@@ -3,3 +3,5 @@
 - [ ] GTK
 - [ ] Fish
 - [ ] Neovim
+- [ ] sddm
+- [ ] grub
