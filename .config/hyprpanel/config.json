@@ -1,0 +1,28 @@
+{
+  "bar.customModules.storage.paths": [
+    "/"
+  ],
+  "theme.font.name": "Ubuntu Nerd Font",
+  "theme.font.label": "Ubuntu Nerd Font",
+  "menus.media.hideAuthor": true,
+  "menus.media.hideAlbum": true,
+  "menus.media.displayTime": true,
+  "menus.media.displayTimeTooltip": true,
+  "scalingPriority": "hyprland",
+  "theme.bar.scaling": 100,
+  "theme.bar.menus.menu.clock.scaling": 100,
+  "theme.osd.scaling": 100,
+  "theme.notification.scaling": 100,
+  "theme.bar.menus.menu.dashboard.scaling": 100,
+  "theme.bar.menus.menu.dashboard.confirmation_scaling": 100,
+  "theme.bar.menus.menu.media.scaling": 100,
+  "theme.bar.menus.menu.volume.scaling": 100,
+  "theme.bar.menus.menu.network.scaling": 100,
+  "theme.bar.menus.menu.bluetooth.scaling": 100,
+  "theme.bar.menus.menu.battery.scaling": 100,
+  "theme.bar.menus.menu.notifications.scaling": 100,
+  "theme.bar.menus.menu.power.scaling": 90,
+  "theme.tooltip.scaling": 100,
+  "theme.bar.menus.popover.scaling": 100,
+  "theme.font.size": "0.8rem"
+}
