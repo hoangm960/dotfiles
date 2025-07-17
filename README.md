@@ -1,6 +1,7 @@
 - [x] Hyprland
-- [ ] Waybar
-- [ ] GTK
+- [ ] Hyprpanel
+- [ ] Rofi
+- [x] GTK
 - [ ] Fish
 - [ ] Neovim
 - [ ] sddm
