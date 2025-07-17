@@ -28,14 +28,13 @@ return {
 			automatic_enable = true,
 			ensure_installed = {
 				"lua_ls",
-				-- "ts_ls", currently using a ts plugin
+				"ts_ls",
 				"html",
 				"cssls",
 				"tailwindcss",
 				"emmet_ls",
 				"emmet_language_server",
-				-- "eslint",
-				"marksman",
+				"eslint",
 			},
 		})
 
@@ -73,50 +72,6 @@ return {
 									},
 								},
 							},
-						},
-					})
-				end,
-
-				["emmet_ls"] = function()
-					lspconfig.emmet_ls.setup({
-						capabilities = capabilities,
-						filetypes = {
-							"html",
-							"typescriptreact",
-							"javascriptreact",
-							"css",
-							"sass",
-							"scss",
-							"less",
-							"svelte",
-						},
-					})
-				end,
-
-				["emmet_language_server"] = function()
-					lspconfig.emmet_language_server.setup({
-						filetypes = {
-							"css",
-							"eruby",
-							"html",
-							"javascript",
-							"javascriptreact",
-							"less",
-							"sass",
-							"scss",
-							"pug",
-							"typescriptreact",
-						},
-						init_options = {
-							includeLanguages = {},
-							excludeLanguages = {},
-							extensionsPath = {},
-							preferences = {},
-							showAbbreviationSuggestions = true,
-							showExpandedAbbreviation = "always",
-							showSuggestionsAsSnippets = false,
-							syntaxProfiles = {},
-							variables = {},
 						},
 					})
 				end,

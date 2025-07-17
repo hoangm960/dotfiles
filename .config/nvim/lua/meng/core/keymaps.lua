@@ -31,7 +31,7 @@ keymap.set("v", ">", ">gv", opts)
 
 keymap.set("x", "<leader>p", [["_dP]], opts)
 
-keymap.set("i", "kj", "<Esc>", opts)
+keymap.set("i", "<C-[>", "<Esc>", opts)
 keymap.set("n", "<Esc>", ":nohlsearch<CR>", { desc = "Turn off highlight", silent = true })
 
 keymap.set("n", "Q", "<nop>", opts)
