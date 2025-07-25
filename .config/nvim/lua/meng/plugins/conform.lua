@@ -29,5 +29,12 @@ return {
 			lua = { "stylua" },
 			python = { "ruff" },
 		},
+		formatters = {
+			prettier = {
+				prepend_args = function()
+					return { "--tab-width", "4" }
+				end,
+			},
+		},
 	},
 }
