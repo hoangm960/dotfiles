@@ -14,7 +14,7 @@ return {
 					cmp.show({ providers = { "snippets" } })
 				end,
 			},
-			["<Tab>"] = { "select_and_accept" },
+			["<C-l>"] = { "select_and_accept" },
 		},
 
 		appearance = {

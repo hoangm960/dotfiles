@@ -104,6 +104,7 @@ return {
 				preferences = {
 					includeCompletionsWithSnippetText = true,
 					includeCompletionsForImportStatements = true,
+					disableSuggestions = true,
 				},
 			},
 		})
