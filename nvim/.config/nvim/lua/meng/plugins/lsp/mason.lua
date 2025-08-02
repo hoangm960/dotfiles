@@ -36,6 +36,11 @@ return {
 				"emmet_language_server",
 				"eslint",
 			},
+			handlers = {
+				function(server_name)
+					require("lspconfig")[server_name].setup({})
+				end,
+			},
 		})
 
 		mason_tool_installer.setup({
