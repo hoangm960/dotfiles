@@ -21,6 +21,9 @@ return {
 			nerd_font_variant = "normal",
 		},
 		signature = { enabled = true },
+		completion = {
+			ghost_text = { enabled = true },
+		},
 	},
 	opts_extend = { "sources.default" },
 }
