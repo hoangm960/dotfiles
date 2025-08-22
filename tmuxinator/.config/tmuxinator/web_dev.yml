@@ -3,8 +3,14 @@ root: .
 
 windows:
   - editor: nvim
+  - shell:
+      layout: even-horizontal
+      panes:
+        - cd frontend
+        - cd backend
   - server:
       layout: even-horizontal
       panes:
         - cd frontend && yarn run dev
         - cd backend && yarn run dev
+  - git: lazygit
