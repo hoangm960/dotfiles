@@ -5,10 +5,9 @@
 ## Things to do
 
 - [x] Hyprland
-- [ ] Hyprpanel
-- [ ] Rofi
+- [ ] Waybar
+- [ ] Walker
 - [x] GTK
-- [ ] Fish
+- [x] Fish
 - [ ] Neovim
-- [ ] sddm
-- [ ] grub
+- [x] grub
