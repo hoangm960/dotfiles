@@ -13,9 +13,11 @@ current_profile=$(powerprofilesctl get)
 if [ "$current_profile" == "power-saver" ]; then
     powerprofilesctl set performance
     pamixer --unmute
+    brightnessctl set 100%
     omarchy-toggle-idle
 else
     powerprofilesctl set power-saver
     pamixer --mute
+    brightnessctl set 70%
     omarchy-toggle-idle
 fi
