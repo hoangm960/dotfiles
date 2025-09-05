@@ -12,10 +12,10 @@ current_profile=$(powerprofilesctl get)
 
 if [ "$current_profile" == "power-saver" ]; then
     powerprofilesctl set performance
-    pamixer --set-volume 100
+    pamixer --unmute
     omarchy-toggle-idle
 else
     powerprofilesctl set power-saver
-    pamixer --set-volume 5
+    pamixer --mute
     omarchy-toggle-idle
 fi
