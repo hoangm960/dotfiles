@@ -14,6 +14,12 @@ return {
 				},
 				{ "filetype" },
 			},
+			lualine_y = {
+				{
+					"diagnostics",
+					sources = { "nvim_workspace_diagnostic" },
+				},
+			},
 		},
 	},
 }
