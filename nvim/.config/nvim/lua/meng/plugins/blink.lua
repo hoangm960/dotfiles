@@ -9,11 +9,7 @@ return {
 
 			["<C-k>"] = { "select_prev", "fallback" },
 			["<C-j>"] = { "select_next", "fallback" },
-			["<C-space>"] = {
-				function(cmp)
-					cmp.show({ providers = { "snippets" } })
-				end,
-			},
+			["<C><leader>"] = { "show" },
 			["<C-l>"] = { "select_and_accept" },
 		},
 
@@ -23,6 +19,7 @@ return {
 		signature = { enabled = true },
 		completion = {
 			ghost_text = { enabled = true },
+			documentation = { auto_show = true },
 		},
 	},
 	opts_extend = { "sources.default" },
