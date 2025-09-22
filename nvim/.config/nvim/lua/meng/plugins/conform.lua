@@ -31,9 +31,7 @@ return {
 		},
 		formatters = {
 			prettier = {
-				prepend_args = function()
-					return { "--tab-width", "4" }
-				end,
+				prepend_args = { "--tab-width", "4" },
 			},
 		},
 	},
