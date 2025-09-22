@@ -39,3 +39,5 @@ opt.hlsearch = true
 
 opt.mouse = "a"
 vim.g.editorconfig = true
+
+opt.sessionoptions = "blank,buffers,curdir,folds,help,tabpages,winsize,winpos,terminal,localoptions"
