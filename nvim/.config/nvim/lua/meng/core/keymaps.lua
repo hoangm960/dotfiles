@@ -26,9 +26,6 @@ keymap.set("n", "<C-u>", "<C-u>zz", opts)
 keymap.set("n", "N", "Nzzzv", opts)
 keymap.set("n", "n", "nzzzv", opts)
 
-keymap.set("v", "<", "<gv", opts)
-keymap.set("v", ">", ">gv", opts)
-
 keymap.set("x", "<leader>p", [["_dP]], opts)
 
 keymap.set("i", "<C-[>", "<Esc>", opts)
@@ -37,17 +34,12 @@ keymap.set("n", "<Esc>", ":nohlsearch<CR>", { desc = "Turn off highlight", silen
 keymap.set("n", "Q", "<nop>", opts)
 keymap.set("n", "x", '"_x', opts)
 
-keymap.set(
-	"n",
-	"<leader>rs",
-	[[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]],
-	{ desc = "[R]eplace [S]tring", silent = true }
-)
+keymap.set("n", "<leader>rs", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]], { desc = "[R]eplace [S]tring" })
 keymap.set(
 	"n",
 	"<leader>rsc",
 	[[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gc<Left><Left><Left>]],
-	{ desc = "[R]eplace [S]tring with [C]onfirmation", silent = true }
+	{ desc = "[R]eplace [S]tring with [C]onfirmation" }
 )
 
 vim.api.nvim_create_autocmd("TextYankPost", {
@@ -99,8 +91,8 @@ keymap.set("n", "gO", "O<Esc>", { desc = "Put empty line above", silent = true }
 keymap.set("n", "go", "o<Esc>", { desc = "Put empty line below", silent = true })
 keymap.set("x", "g/", "<esc>/\\%V", { desc = "Search inside visual selection" })
 
-keymap.set("c", "<M-h>", "<Left>", { desc = "Left" })
-keymap.set("c", "<M-l>", "<Right>", { desc = "Right" })
+keymap.set("c", "<M-h>", "<Left>", { silent = true, noremap = false, desc = "Left" })
+keymap.set("c", "<M-l>", "<Right>", { silent = true, noremap = false, desc = "Right" })
 keymap.set("i", "<M-h>", "<Left>", { silent = true, noremap = false, desc = "Left" })
 keymap.set("i", "<M-j>", "<Down>", { silent = true, noremap = false, desc = "Down" })
 keymap.set("i", "<M-k>", "<Up>", { silent = true, noremap = false, desc = "Up" })
