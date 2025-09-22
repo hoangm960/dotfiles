@@ -14,20 +14,16 @@ if not (vim.uv or vim.loop).fs_stat(lazypath) then
 end
 vim.opt.rtp:prepend(lazypath)
 
-require("lazy").setup(
-    { 
-        { import = "meng.plugins" },
-        { import = "meng.plugins.lsp" },
-    },
-    { 
-        checker = {
-            enabled = true,
-            notify = false,
-        },
-        change_detection = {
-            notify = false, 
-        },
-    }
-)
+require("lazy").setup({
+	{ import = "meng.plugins" },
+}, {
+	checker = {
+		enabled = true,
+		notify = false,
+	},
+	change_detection = {
+		notify = false,
+	},
+})
 
 vim.keymap.set("n", "<leader>lp", "<cmd>Lazy<CR>", { desc = "Open [L]azy [P]ackage manager", silent = true })
