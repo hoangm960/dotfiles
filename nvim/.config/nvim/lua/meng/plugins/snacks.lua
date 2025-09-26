@@ -76,13 +76,6 @@ return {
 				desc = "[L]azy[G]it",
 			},
 			{
-				"<leader>gl",
-				function()
-					Snacks.lazygit.log()
-				end,
-				desc = "[G]it [L]og",
-			},
-			{
 				"<leader>rf",
 				function()
 					Snacks.rename.rename_file()
@@ -138,13 +131,6 @@ return {
 				desc = "[F]ind with [G]rep",
 			},
 			{
-				"<leader>fw",
-				function()
-					Snacks.picker.grep_word()
-				end,
-				desc = "[F]ind [W]ord",
-			},
-			{
 				"<leader>fk",
 				function()
 					Snacks.picker.keymaps()
@@ -159,32 +145,11 @@ return {
 				desc = "[F]ind [H]elp",
 			},
 			{
-				"<leader>gd",
-				function()
-					Snacks.picker.diagnostics()
-				end,
-				desc = "[G]et [D]iagnostics",
-			},
-			{
-				"<leader>gbd",
-				function()
-					Snacks.picker.diagnostics_buffer()
-				end,
-				desc = "[G]et [B]uffer [D]iagnostics",
-			},
-			{
 				"<leader>uh",
 				function()
 					Snacks.picker.undo()
 				end,
 				desc = "[U]ndo [H]istory",
-			},
-			{
-				"<leader>gpb",
-				function()
-					Snacks.picker.git_branches()
-				end,
-				desc = "[G]it [P]ick [B]ranch",
 			},
 		}
 	end,
