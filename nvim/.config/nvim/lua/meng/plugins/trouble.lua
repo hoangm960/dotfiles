@@ -7,7 +7,6 @@ return {
 	cmd = "Trouble",
 	keys = {
 		{ "<leader>tt", "<cmd>Trouble diagnostics toggle<CR>", desc = "[T]oggle [T]rouble" },
-		{ "<leader>td", "<cmd>Trouble diagnostics toggle filter.buf=0<CR>", desc = "[T]rouble [D]ocument" },
-		{ "<leader>tq", "<cmd>Trouble quickfix toggle<CR>", desc = "[T]oggle [Q]uickfix" },
+		{ "<leader>tc", "<cmd>Trouble diagnostics toggle filter.buf=0<CR>", desc = "[T]rouble [C]urrent" },
 	},
 }
