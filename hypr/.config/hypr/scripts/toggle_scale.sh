@@ -11,5 +11,3 @@ else
 fi
 
 hyprctl keyword monitor "$MONITOR_NAME,preferred,auto,$new_scale"
-
-echo "Monitor '$MONITOR_NAME' scale set to $new_scale."
