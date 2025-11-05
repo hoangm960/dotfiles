@@ -1,0 +1,23 @@
+gestures {
+    hot-corners {
+        off
+    }
+}
+
+input {
+    warp-mouse-to-focus
+    focus-follows-mouse
+    keyboard {
+        xkb {
+        }
+        numlock
+    }
+    touchpad {
+        natural-scroll
+        scroll-factor 0.5
+    }
+    mouse {
+    }
+    trackpoint {
+    }
+}
