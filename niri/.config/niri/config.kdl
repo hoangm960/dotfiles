@@ -1,8 +1,19 @@
 include "autostart.kdl"
 include "envs.kdl"
+include "input.kdl"
 include "layout.kdl"
 include "binds.kdl"
 include "ui.kdl"
+
+output "eDP-1" {
+    mode "1920x1080@144.003"
+    scale 1.25
+}
+
+output "HDMI-A-1" {
+    mode "1920x1080@100"
+    focus-at-startup
+}
 
 config-notification {
     disable-failed
