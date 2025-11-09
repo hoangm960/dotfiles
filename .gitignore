@@ -2,3 +2,4 @@ nvim/.config/nvim/lazy-lock.json
 tmux/.config/tmux/plugins/
 !tmux/.config/tmux/plugins/tpm
 omarchy/.config/omarchy/current
+niri/.config/niri/dms/
