@@ -4,5 +4,10 @@ environment {
   ELECTRON_OZONE_PLATFORM_HINT "auto"
   QT_QPA_PLATFORMTHEME "gtk3"
   QT_QPA_PLATFORMTHEME_QT6 "gtk3"
+  GTK_IM_MODULE "fcitx"
+  QT_IM_MODULE "fcitx"
+  XMODIFIERS "@im =fcitx"
+  SDL_IM_MODULE "fcitx"
+  GLFW_IM_MODULE "fcitx"
   TERMINAL "kitty"
 }
