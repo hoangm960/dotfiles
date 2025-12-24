@@ -80,10 +80,23 @@ window-rule {
 }
 window-rule {
     match app-id=r#"firefox$"# title="^Picture-in-Picture$"
+    match app-id=r#"zen$"# title="^Picture-in-Picture$"
     match app-id="zoom"
     open-floating true
 }
 window-rule {
     geometry-corner-radius 12
     clip-to-geometry true
+}
+window-rule {
+    match app-id="thunar" title=r#"File Operation Progress.*"#
+    match app-id="thunar" title=r#"Rename.*"#
+    open-floating true
+}
+window-rule {
+    match app-id="chromium"
+    match app-id="zen"
+    match app-id="qutebrowser"
+    default-column-width {proportion 1.0;}
+    opacity 1.0
 }
