@@ -193,6 +193,6 @@ binds {
     Mod+Shift+P { power-off-monitors; }
 
     // === User Preference ===
-    Mod+Ctrl+Shift+P {spawn "sh" "-c" "kitty $HOME/.config/niri/scripts/open_project.sh";}
+    Mod+Ctrl+Shift+P {spawn-sh "$TERMINAL -e $HOME/.config/niri/scripts/open_project.sh";}
     Mod+Ctrl+Shift+S {spawn-sh "$HOME/.config/niri/scripts/school_mode.sh";}
 }
