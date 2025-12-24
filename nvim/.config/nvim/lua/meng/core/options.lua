@@ -34,6 +34,7 @@ opt.splitbelow = true
 
 opt.isfname:append("@-@")
 opt.updatetime = 50
+opt.autoread = true
 
 opt.hlsearch = true
 
@@ -41,3 +42,13 @@ opt.mouse = "a"
 vim.g.editorconfig = true
 
 opt.sessionoptions = "blank,buffers,curdir,folds,help,tabpages,winsize,winpos,terminal,localoptions"
+
+vim.api.nvim_create_autocmd({ "FocusGained", "BufEnter", "CursorHold", "CursorHoldI" }, {
+    desc = "Check if file changed on disk",
+    group = vim.api.nvim_create_augroup("checktime", { clear = true }),
+    callback = function()
+        if vim.fn.mode() ~= "c" then
+            vim.cmd("checktime")
+        end
+    end,
+})
