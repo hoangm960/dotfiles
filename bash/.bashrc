@@ -3,6 +3,7 @@
 # opencode
 export PATH=/home/meng/.opencode/bin:$PATH
 export EDITOR=nvim
+export TERMINAL=kitty
 
 is_niri_running() {
     if pgrep -x "niri" > /dev/null; then
@@ -17,3 +18,5 @@ if is_niri_running; then
 else
     echo "Niri not detected. Continuing with bash shell."
 fi
+
+export PATH=$PATH:/home/meng/.spicetify
