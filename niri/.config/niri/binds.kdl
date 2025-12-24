@@ -193,6 +193,13 @@ binds {
     Mod+Shift+P { power-off-monitors; }
 
     // === User Preference ===
+    Mod+B {spawn "dms" "ipc" "call" "bar" "toggle";}
+    Mod+E {spawn "thunar";}
     Mod+Ctrl+Shift+P {spawn-sh "$TERMINAL -e $HOME/.config/niri/scripts/open_project.sh";}
+    Mod+Escape {spawn "dms" "ipc" "call" "powermenu" "open";}
     Mod+Ctrl+Shift+S {spawn-sh "$HOME/.config/niri/scripts/school_mode.sh";}
+    Mod+Shift+S { screenshot; }
+    Mod+Shift+Alt+S {spawn "localsend";}
+    Mod+Shift+B {spawn "chromium";}
+    Mod+Shift+Alt+B {spawn "zen-browser";}
 }
