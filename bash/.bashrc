@@ -20,3 +20,6 @@ else
 fi
 
 export PATH=$PATH:/home/meng/.spicetify
+export PATH=$JAVA_HOME/bin:$PATH
+export JAVA_HOME=/usr/lib/jvm/default
+export PATH="$HOME/.local/share/gem/ruby/3.4.0/bin:$PATH"
