@@ -7,7 +7,14 @@ find_projects() {
     expanded_path=$(eval echo "$root")
     find "$expanded_path" -mindepth 1 -maxdepth 3 \
       -type d \( -name ".git" -o -name ".tmuxinator" \) -printf '%h\n' 2>/dev/null
-  done | sort -u | xargs -r stat -c '%Y %n' | sort -rn | cut -d' ' -f2-
+  done | sort -u | while read -r dir; do
+    if [[ -f "$dir/.niri_last_opened" ]]; then
+      timestamp=$(stat -c '%Y' "$dir/.niri_last_opened")
+    else
+      timestamp=$(stat -c '%Y' "$dir")
+    fi
+    echo "$timestamp $dir"
+  done | sort -rn | cut -d' ' -f2-
 }
 
 selected_project=$(find_projects | fzf --preview="ls -F {}" --cycle --header "Select a project directory")
@@ -20,6 +27,7 @@ selected_config=$(printf "%s\n" $configs | fzf --header "Select a tmuxinator con
 [[ -z "$selected_config" ]] && exit 0
 
 cd "$selected_project" || exit 1
+touch "$selected_project/.niri_last_opened"
 export PROJECT_DIR="$selected_project"
 
 tmuxinator start "$selected_config"
