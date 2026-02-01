@@ -14,8 +14,7 @@ return {
 	opts = {
 		format_on_save = {
 			lsp_fallback = true,
-			async = false,
-			timeout_ms = 500,
+			timeout_ms = 3000,
 		},
 		formatters_by_ft = {
 			javascript = { "prettier" },
@@ -28,10 +27,14 @@ return {
 			markdown = { "prettier" },
 			lua = { "stylua" },
 			python = { "ruff" },
+			java = { "google-java-format" },
 		},
 		formatters = {
 			prettier = {
 				prepend_args = { "--tab-width", "4" },
+			},
+			["google-java-format"] = {
+				append_args = { "--aosp" },
 			},
 		},
 	},
