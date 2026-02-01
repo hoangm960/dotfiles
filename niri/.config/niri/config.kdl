@@ -33,3 +33,6 @@ screenshot-path "~/Pictures/Screenshots/Screenshot from %Y-%m-%d %H-%M-%S.png"
 debug {
     honor-xdg-activation-with-invalid-serial
 }
+
+include "dms/cursor.kdl"
+include "dms/binds.kdl"
