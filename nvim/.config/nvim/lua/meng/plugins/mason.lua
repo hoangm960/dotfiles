@@ -28,9 +28,24 @@ return {
 					},
 				},
 			},
-			ts_ls = {
+			vtsls = {
+				settings = {
+					typescript = {
+						updateImportsOnFileMove = { enabled = "always" },
+						inlayHints = {
+							parameterNames = { enabled = "literals" },
+							parameterTypes = { enabled = true },
+							variableTypes = { enabled = false },
+							propertyDeclarationTypes = { enabled = true },
+							functionLikeReturnTypes = { enabled = true },
+							enumMemberValues = { enabled = true },
+						},
+					},
+				},
 				on_attach = function(client, bufnr)
-					require("workspace-diagnostics").populate_workspace_diagnostics(client, bufnr)
+					vim.defer_fn(function()
+						require("workspace-diagnostics").populate_workspace_diagnostics(client, bufnr)
+					end, 2000)
 				end,
 				init_options = {
 					preferences = {
@@ -60,7 +75,7 @@ return {
 			automatic_enable = true,
 			ensure_installed = {
 				"lua_ls",
-				"ts_ls",
+				"vtsls",
 				"html",
 				"cssls",
 				"tailwindcss",
