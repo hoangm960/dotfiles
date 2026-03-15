@@ -8,6 +8,16 @@ find_projects() {
     find "$expanded_path" -mindepth 1 -maxdepth 3 \
       -type d \( -name ".git" -o -name ".tmuxinator" \) -printf '%h\n' 2>/dev/null
   done | sort -u | while read -r dir; do
+    has_frontend=0
+    has_backend=0
+    for child in "$dir"/*; do
+      [[ -d "$child" ]] || continue
+      case "$child" in
+        *frontend*) has_frontend=1 ;;
+        *backend*) has_backend=1 ;;
+      esac
+    done
+    [[ $has_frontend -eq 1 && $has_backend -eq 1 ]] || continue
     if [[ -f "$dir/.niri_last_opened" ]]; then
       timestamp=$(stat -c '%Y' "$dir/.niri_last_opened")
     else

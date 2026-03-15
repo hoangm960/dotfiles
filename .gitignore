@@ -5,3 +5,4 @@ tmux/.config/tmux/plugins/
 !tmux/.config/tmux/plugins/tpm
 
 niri/.config/niri/dms/
+.niri_last_opened
