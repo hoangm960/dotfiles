@@ -1,0 +1,11 @@
+name: <%= File.basename(Dir.pwd) %> 
+root: .
+
+windows:
+  - editor: nvim
+  - shell:
+  - server:
+      layout: even-horizontal
+      panes: bun run dev
+  - git: lazygit
+  - opencode: opencode
