@@ -14,3 +14,4 @@ windows:
         - cd frontend && bun run dev
         - cd backend && bun run dev
   - git: lazygit
+  - opencode: opencode
