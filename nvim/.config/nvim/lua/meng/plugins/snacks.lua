@@ -151,6 +151,13 @@ return {
                 desc = "[F]ind [H]elp",
             },
             {
+                "<leader>fs",
+                function()
+                    Snacks.picker.lsp_symbols()
+                end,
+                desc = "[F]ind [S]ymbols (functions, classes)",
+            },
+            {
                 "<leader>uh",
                 function()
                     Snacks.picker.undo()
