@@ -1,0 +1,8 @@
+name: <%= File.basename(Dir.pwd) %> 
+root: .
+
+windows:
+  - editor: source .venv/bin/activate.fish && nvim
+  - shell: source .venv/bin/activate.fish
+  - git: lazygit
+  - opencode: source .venv/bin/activate.fish && opencode
