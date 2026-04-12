@@ -1,6 +1,8 @@
 #!/bin/bash
 
-PROJECT_ROOTS=(~ /run/media/meng/Data/Programming)
+PROJECT_ROOTS=(~ /run/media/meng/Data/Programming ~ /run/media/meng/Data/School/)
+
+niri msg action maximize-column
 
 configs=$(tmuxinator list | tail -n +2 | awk '{$1=$1;print}')
 [[ -z "$configs" ]] && { echo "No tmuxinator configs found" >&2; exit 1; }
@@ -64,10 +66,23 @@ find_web_projects() {
   done | sort -rn | cut -d' ' -f2-
 }
 
+find_python_projects() {
+  for root in "${PROJECT_ROOTS[@]}"; do
+    expanded_path=$(eval echo "$root")
+    find "$expanded_path" -mindepth 1 -maxdepth 3 \
+      -type d -name ".venv" -printf '%h\n' 2>/dev/null
+  done | sort -u | while read -r dir; do
+    timestamp=$(stat -c '%Y' "$dir")
+    echo "$timestamp $dir"
+  done | sort -rn | cut -d' ' -f2-
+}
+
 if [[ "$selected_config" == "mono_repo_web_dev" ]]; then
   project_list=$(find_mono_repo_projects)
 elif [[ "$selected_config" == "single_project_web_dev" ]]; then
   project_list=$(find_web_projects)
+elif [[ "$selected_config" == "python" ]]; then
+  project_list=$(find_python_projects)
 else
   project_list=$(find_all_projects)
 fi
@@ -78,4 +93,7 @@ selected_project=$(echo "$project_list" | fzf --preview="ls -F {}" --cycle --hea
 cd "$selected_project" || exit 1
 export PROJECT_DIR="$selected_project"
 
+if [[ "$selected_config" == "python" ]]; then
+   source .venv/bin/activate.fish 
+fi
 tmuxinator start "$selected_config"
