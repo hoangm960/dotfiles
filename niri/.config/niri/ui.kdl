@@ -99,3 +99,8 @@ window-rule {
     match app-id="qutebrowser"
     opacity 1.0
 }
+
+window-rule {
+    match app-id="jetbrains-studio" title="^Welcome to Android Studio$"
+    open-floating true
+}
