@@ -104,22 +104,6 @@ curl -fsSL https://install.danklinux.com | sh
 dms setup
 ```
 
-### Individual Components
-
-```bash
-# DankMaterialShell
-yay -S dms-git
-
-# System monitor
-yay -S dgop
-
-# File search
-yay -S dsearch
-
-# Color theming
-yay -S matugen
-```
-
 ---
 
 ## Install Packages Script
@@ -131,15 +115,6 @@ After setting up the system, install all packages from this dotfiles:
 ```
 
 The script installs packages from official Arch repos and AUR, grouped by category:
-
-- **System & Base**: base, grub, intel-ucode, sof-firmware, zram-generator, ufw, bluez, bluez-utils, brightnessctl
-- **Shell & CLI**: starship, zoxide, stow, wget
-- **Development**: bun, neovim, kitty, lazygit, github-cli, yarn, luarocks, sassc, cli11, qt6-shadertools, fd, tree-sitter-cli, uv
-- **System Tools**: timeshift
-- **AUR Tools**: yay, cpptrace-debug, dsearch-bin, yay-debug
-- **GUI & Theming**: gtk-engine-murrine, tela-circle-icon-theme-dracula, nwg-look, fcitx5
-- **Display & Graphics**: dms-shell, nvidia-open, wayland-protocols, greetd-dms-greeter-git
-- **Applications**: chromium, spotify, spicetify-bin, opencode, tmuxinator, localsend-bin, zen-browser-bin
 
 Uses `--needed` flag - already-installed packages are skipped. Requires yay (installed automatically if missing).
 
