@@ -88,7 +88,7 @@ makepkg -si
 
 ---
 
-## Dank Linux (Optional)
+## Dank Linux
 
 A modern desktop suite with DankMaterialShell (DMS). Works with Niri, Hyprland, and other Wayland compositors.
 
@@ -122,60 +122,25 @@ yay -S matugen
 
 ---
 
-## Install Niri
+## Install Packages Script
 
-A scrollable-tiling Wayland compositor.
-
-### 1. Install Niri
+After setting up the system, install all packages from this dotfiles:
 
 ```bash
-# Arch Linux
-yay -S niri
-
-# Or from source (requires Rust)
-git clone https://github.com/niri-wm/niri.git
-cd niri
-cargo build --release
-sudo cp target/release/niri /usr/local/bin/
+./install-packages.sh
 ```
 
-### 2. Install Dependencies
+The script installs packages from official Arch repos and AUR, grouped by category:
+- **System & Base**: base, grub, intel-ucode, sof-firmware, zram-generator, ufw, bluez, bluez-utils, brightnessctl
+- **Shell & CLI**: starship, zoxide, stow, wget
+- **Development**: bun, neovim, kitty, lazygit, github-cli, yarn, luarocks, sassc, cli11, qt6-shadertools, fd, tree-sitter-cli, uv
+- **System Tools**: timeshift
+- **AUR Tools**: yay, cpptrace-debug, dsearch-bin, yay-debug
+- **GUI & Theming**: gtk-engine-murrine, tela-circle-icon-theme-dracula, nwg-look, fcitx5
+- **Display & Graphics**: dms-shell, nvidia-open, wayland-protocols, greetd-dms-greeter-git
+- **Applications**: chromium, spotify, spicetify-bin, opencode, tmuxinator, localsend-bin, zen-browser-bin
 
-```bash
-# Required
-yay -S waybar fuzzel wofi grim wl-clipboard
-
-# Optional but recommended
-yay -S polkit-kde-agent libdbusmenu-glib networkmanager
-```
-
-### 3. Configure Login Manager
-
-If using greetd:
-
-```bash
-sudo pacman -S greetd
-sudo systemctl enable greetd
-```
-
-Create `~/.config/niri/config.kdl` (see [niri config](https://github.com/niri-wm/niri/blob/main/doc/config.md))
-
-### 4. Start Niri
-
-Log out and select Niri from your display manager, or add to `~/.xinitrc`:
-
-```bash
-exec niri
-```
-
-### 5. Clone Dotfiles
-
-```bash
-yay -S stow
-git clone https://github.com/hoangm960/dotfiles.git
-cd dotfiles
-stow .
-```
+Uses `--needed` flag - already-installed packages are skipped. Requires yay (installed automatically if missing).
 
 ---
 
