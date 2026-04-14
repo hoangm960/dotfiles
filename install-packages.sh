@@ -14,7 +14,11 @@ sudo pacman -S --needed \
     ufw \
     bluez \
     bluez-utils \
-    brightnessctl
+    brightnessctl \
+    iwd \
+    ntfs-3g \
+    sbctl \
+    man-db
 
 # Shell & CLI
 echo "Installing Shell & CLI packages..."
@@ -22,7 +26,11 @@ sudo pacman -S --needed \
     starship \
     zoxide \
     stow \
-    wget
+    wget \
+    fish \
+    fzf \
+    tmux \
+    git
 
 # Development
 echo "Installing Development packages..."
@@ -38,7 +46,8 @@ sudo pacman -S --needed \
     qt6-shadertools \
     fd \
     tree-sitter-cli \
-    uv
+    uv \
+    npm
 
 # System Tools
 echo "Installing System Tools packages..."
@@ -78,7 +87,11 @@ if command -v yay &>/dev/null || command -v pacman &>/dev/null; then
         spotify \
         tmuxinator \
         localsend-bin \
-        zen-browser-bin
+        zen-browser-bin \
+        niri \
+        quickshell-git \
+        cava \
+        onlyoffice-bin
 
     # GUI Tools (official repos)
     echo "Installing GUI Tools packages..."
