@@ -58,5 +58,3 @@ GRUB_SAVEDEFAULT=true
 # functionality install os-prober and uncomment to detect and include other
 # operating systems.
 GRUB_DISABLE_OS_PROBER=false
-
-GRUB_THEME="/boot/grub/themes/minegrub/theme.txt"
