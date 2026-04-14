@@ -131,6 +131,7 @@ After setting up the system, install all packages from this dotfiles:
 ```
 
 The script installs packages from official Arch repos and AUR, grouped by category:
+
 - **System & Base**: base, grub, intel-ucode, sof-firmware, zram-generator, ufw, bluez, bluez-utils, brightnessctl
 - **Shell & CLI**: starship, zoxide, stow, wget
 - **Development**: bun, neovim, kitty, lazygit, github-cli, yarn, luarocks, sassc, cli11, qt6-shadertools, fd, tree-sitter-cli, uv
@@ -146,41 +147,14 @@ Uses `--needed` flag - already-installed packages are skipped. Requires yay (ins
 
 ## Secure Boot
 
-1. Change Secure Boot to Setup Mode in Firmware
-2. Install required packages:
+Use the automated script:
 
 ```bash
-sudo pacman -S sbctl
-sudo pacman -S grub
+# Interactive mode (with confirmations)
+./secureboot.sh
+
+# Non-interactive mode (auto-run all steps)
+./secureboot.sh -y
 ```
 
-3. Reinstall GRUB
-
-```bash
-sudo grub-install --target=x86_64-efi --efi-directory=/boot --bootloader-id=GRUB --modules="tpm" --disable-shim-lock
-```
-
-4. Create and enroll keys
-
-```bash
-sudo sbctl create-keys
-sudo sbctl enroll-keys --microsoft
-```
-
-Then verify with
-
-```bash
-sudo sbctl verify
-```
-
-_Shortcut:_
-
-```bash
-sudo sbctl verify | sed 's/✗ /sbctl sign -s /e'
-```
-
-5. Rebuild GRUB and reboot
-
-```bash
-sudo grub-mkconfig -o /boot/grub/grub.cfg
-```
+**Prerequisite**: Change Secure Boot to Setup Mode in firmware before running.
