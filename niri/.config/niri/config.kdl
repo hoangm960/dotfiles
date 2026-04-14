@@ -1,10 +1,3 @@
-include "autostart.kdl"
-include "envs.kdl"
-include "input.kdl"
-include "layout.kdl"
-include "binds.kdl"
-include "ui.kdl"
-
 output "eDP-1" {
     mode "1920x1080@144.003"
     variable-refresh-rate
@@ -35,7 +28,18 @@ debug {
     honor-xdg-activation-with-invalid-serial
 }
 
-include "dms/cursor.kdl"
+include "dms/colors.kdl"
+include "dms/layout.kdl"
+include "dms/alttab.kdl"
 include "dms/binds.kdl"
-
+include "dms/outputs.kdl"
 include "dms/windowrules.kdl"
+
+include "autostart.kdl"
+include "envs.kdl"
+include "input.kdl"
+include "layout.kdl"
+include "binds.kdl"
+include "ui.kdl"
+
+include "dms/cursor.kdl"

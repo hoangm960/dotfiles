@@ -1,0 +1,38 @@
+// DMS Window Rules - Managed by DankMaterialShell
+// Do not edit manually - changes may be overwritten
+
+// @id=wr_1776081228473093531 @name=All Windows
+window-rule {
+    open-maximized true
+    open-focused true
+}
+
+// @id=wr_1776080981769900177 @name=Quick Shell
+window-rule {
+    match app-id="^org.quickshell$"
+    open-floating true
+}
+
+// @id=wr_1776081500559062058 @name=PiP
+window-rule {
+    match app-id="^firefox|zen$" title="^Picture-in-Picture$"
+    open-floating true
+}
+
+// @id=wr_1776081641927857308 @name=thunar operations
+window-rule {
+    match app-id="^thunar$" title="^(File Operation Progress|Rename).*$"
+    open-floating true
+}
+
+// @id=wr_1776081680670485606 @name=Browsers
+window-rule {
+    match app-id="^chromium|zen$"
+    opacity 1.00
+}
+
+// @id=wr_1776081758269570148 @name=android studio welcome page
+window-rule {
+    match app-id="^jetbrains-studio$" title="^Welcome to Android Studio$"
+    open-floating true
+}
