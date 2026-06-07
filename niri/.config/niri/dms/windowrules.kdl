@@ -7,6 +7,12 @@ window-rule {
     open-focused true
 }
 
+// @id=wr_1776328860093249693 @name=Open Project
+window-rule {
+    match app-id="^kitty$" title="^open_project$"
+    open-maximized true
+}
+
 // @id=wr_1776080981769900177 @name=Quick Shell
 window-rule {
     match app-id="^org.quickshell$"
@@ -27,7 +33,7 @@ window-rule {
 
 // @id=wr_1776081680670485606 @name=Browsers
 window-rule {
-    match app-id="^chromium|zen$"
+    match app-id="^chromium|zen|brave-origin-nightly$"
     opacity 1.00
 }
 
