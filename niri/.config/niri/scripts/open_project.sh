@@ -2,8 +2,6 @@
 
 PROJECT_ROOTS=(~ /run/media/meng/Data/Programming ~ /run/media/meng/Data/School/)
 
-niri msg action maximize-column
-
 configs=$(tmuxinator list | tail -n +2 | awk '{$1=$1;print}')
 [[ -z "$configs" ]] && { echo "No tmuxinator configs found" >&2; exit 1; }
 

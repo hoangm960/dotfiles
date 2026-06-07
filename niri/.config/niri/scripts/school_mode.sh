@@ -11,7 +11,7 @@ if [ "$current_profile" == "power-saver" ]; then
 else
     powerprofilesctl set power-saver
     dms ipc call audio setvolume 0
-    brightnessctl set 50%
+    brightnessctl set 20%
     brightnessctl -d asus::kbd_backlight set 0
     niri msg output eDP-1 mode 1920x1080@60.004
 fi
