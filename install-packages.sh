@@ -18,7 +18,14 @@ sudo pacman -S --needed \
     iwd \
     ntfs-3g \
     sbctl \
-    man-db
+    man-db \
+    greetd \
+    power-profiles-daemon \
+    os-prober \
+    evtest \
+    exfatprogs \
+    wl-clipboard \
+    wtype
 
 # Shell & CLI
 echo "Installing Shell & CLI packages..."
@@ -30,7 +37,8 @@ sudo pacman -S --needed \
     fish \
     fzf \
     tmux \
-    git
+    git \
+    yazi
 
 # Development
 echo "Installing Development packages..."
@@ -47,12 +55,30 @@ sudo pacman -S --needed \
     fd \
     tree-sitter-cli \
     uv \
-    npm
+    npm \
+    code \
+    matugen
 
 # System Tools
 echo "Installing System Tools packages..."
 sudo pacman -S --needed \
     timeshift
+
+# Audio
+echo "Installing Audio packages..."
+sudo pacman -S --needed \
+    pipewire \
+    pipewire-pulse \
+    wireplumber \
+    pavucontrol
+
+# Media & Graphics
+echo "Installing Media & Graphics packages..."
+sudo pacman -S --needed \
+    vlc \
+    imagemagick \
+    imv \
+    file-roller
 
 # AUR Packages (requires yay)
 if command -v yay &>/dev/null || command -v pacman &>/dev/null; then
@@ -91,21 +117,36 @@ if command -v yay &>/dev/null || command -v pacman &>/dev/null; then
         niri \
         quickshell-git \
         cava \
-        onlyoffice-bin
+        onlyoffice-bin \
+        brave-origin-nightly-bin \
+        bluevein-bin \
+        yaak \
+        xdg-terminal-exec-git
 
     # GUI Tools (official repos)
     echo "Installing GUI Tools packages..."
     sudo pacman -S --needed \
         nwg-look \
         fcitx5-configtool \
-        fcitx5-unikey
+        fcitx5-unikey \
+        thunar \
+        thunar-archive-plugin \
+        thunar-volman \
+        tumbler \
+        fcitx5 \
+        noto-fonts \
+        noto-fonts-emoji \
+        ttf-jetbrains-mono-nerd
 
     # Display & Graphics (official)
     echo "Installing Display & Graphics packages..."
     sudo pacman -S --needed \
         dms-shell \
         nvidia-open \
-        wayland-protocols
+        wayland-protocols \
+        nvidia-utils \
+        nvidia-settings \
+        xwayland-satellite
 fi
 
 # Applications (official)
