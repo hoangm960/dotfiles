@@ -98,19 +98,29 @@ return {
                 local keyopts = { buffer = ev.buf, silent = true }
 
                 keyopts.desc = "Show LSP references"
-                vim.keymap.set("n", "gR", vim.lsp.buf.references, keyopts)
+                vim.keymap.set("n", "gR", function()
+                    Snacks.picker.lsp_references()
+                end, keyopts)
 
                 keyopts.desc = "Go to declaration"
-                vim.keymap.set("n", "gD", vim.lsp.buf.declaration, keyopts)
+                vim.keymap.set("n", "gD", function()
+                    Snacks.picker.lsp_declarations()
+                end, keyopts)
 
                 keyopts.desc = "Show LSP definitions"
-                vim.keymap.set("n", "gd", vim.lsp.buf.definition, keyopts)
+                vim.keymap.set("n", "gd", function()
+                    Snacks.picker.lsp_definitions()
+                end, keyopts)
 
                 keyopts.desc = "Show LSP implementations"
-                vim.keymap.set("n", "gi", vim.lsp.buf.implementation, keyopts)
+                vim.keymap.set("n", "gi", function()
+                    Snacks.picker.lsp_implementations()
+                end, keyopts)
 
                 keyopts.desc = "Show LSP type definitions"
-                vim.keymap.set("n", "gt", vim.lsp.buf.type_definition, keyopts)
+                vim.keymap.set("n", "gt", function()
+                    Snacks.picker.lsp_type_definitions()
+                end, keyopts)
 
                 keyopts.desc = "See available code actions"
                 vim.keymap.set({ "n", "v" }, "<leader>ca", function()
