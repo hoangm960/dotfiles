@@ -18,6 +18,7 @@ keymap.set(
     { desc = "Save and go to Normal mode", silent = true }
 )
 keymap.set("n", "<leader>x", ":q<CR>", { desc = "Close current buffer", silent = true })
+keymap.set("n", "<leader>qc", function() vim.cmd("cclose") vim.cmd("lclose") end, { desc = "Close quickfix panel", silent = true })
 keymap.set("n", "<leader>wq", ":wq<CR>", { desc = "[W]rite & [Q]uit", silent = true })
 keymap.set("n", "<leader>qa", ":wqa<CR>", { desc = "[W]rite and [Q]uit [A]ll", silent = true })
 
