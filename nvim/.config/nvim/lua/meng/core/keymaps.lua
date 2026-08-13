@@ -18,7 +18,10 @@ keymap.set(
     { desc = "Save and go to Normal mode", silent = true }
 )
 keymap.set("n", "<leader>x", ":q<CR>", { desc = "Close current buffer", silent = true })
-keymap.set("n", "<leader>qc", function() vim.cmd("cclose") vim.cmd("lclose") end, { desc = "Close quickfix panel", silent = true })
+keymap.set("n", "<leader>qc", function()
+    vim.cmd("cclose")
+    vim.cmd("lclose")
+end, { desc = "Close quickfix panel", silent = true })
 keymap.set("n", "<leader>wq", ":wq<CR>", { desc = "[W]rite & [Q]uit", silent = true })
 keymap.set("n", "<leader>qa", ":wqa<CR>", { desc = "[W]rite and [Q]uit [A]ll", silent = true })
 
@@ -102,3 +105,5 @@ keymap.set("t", "<M-h>", "<Left>", { silent = true, desc = "Left" })
 keymap.set("t", "<M-j>", "<Down>", { silent = true, desc = "Down" })
 keymap.set("t", "<M-k>", "<Up>", { silent = true, desc = "Up" })
 keymap.set("t", "<M-l>", "<Right>", { silent = true, desc = "Right" })
+
+keymap.set("n", "<C-a>", "ggVG", { silent = true, desc = "Select All" })
