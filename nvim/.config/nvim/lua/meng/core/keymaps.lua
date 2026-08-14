@@ -10,7 +10,7 @@ keymap.set("n", "<leader>ond", function()
     vim.notify("Change directory to Neovim config")
 end, { desc = "[O]pen [N]eovim config [D]irectory", silent = true })
 
-keymap.set("n", "<C-S>", "<Cmd>silent! update | redraw<CR>", { desc = "Save", silent = true })
+keymap.set("n", "<leader>S", "<Cmd>silent! update | redraw<CR>", { desc = "Save", silent = true })
 keymap.set(
     { "i", "x" },
     "<C-S>",
