@@ -7,3 +7,4 @@ tmux/.config/tmux/plugins/
 .niri_last_opened
 /fcitx5/.config/fcitx5/conf/cached_layouts
 /fcitx5/.config/fcitx5/crash.log
+/tmux/.config/tmux/plugins
