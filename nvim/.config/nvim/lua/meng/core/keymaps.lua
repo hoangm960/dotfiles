@@ -38,12 +38,12 @@ keymap.set("n", "<Esc>", ":nohlsearch<CR>", { desc = "Turn off highlight", silen
 keymap.set("n", "Q", "<nop>", opts)
 keymap.set("n", "x", '"_x', opts)
 
-keymap.set("n", "<leader>rs", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]], { desc = "[R]eplace [S]tring" })
+keymap.set("n", "<leader>sr", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]], { desc = "[S]tring [R]eplace" })
 keymap.set(
     "n",
-    "<leader>rsc",
+    "<leader>src",
     [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gc<Left><Left><Left>]],
-    { desc = "[R]eplace [S]tring with [C]onfirmation" }
+    { desc = "[S]tring [R]eplace with [C]onfirmation" }
 )
 
 vim.api.nvim_create_autocmd("TextYankPost", {
