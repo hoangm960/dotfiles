@@ -1,0 +1,9 @@
+name: <%= File.basename(Dir.pwd) %>
+root: .
+
+windows:
+  - editor: nvim
+  - shell:
+  - server: rails s
+  - git: lazygit
+  - opencode: opencode
