@@ -7,7 +7,7 @@ function reboot2windows --description 'Find and reboot into the Windows GRUB men
     end
 
     echo "Setting GRUB to boot: $windows_title"
-    sudo grub-reboot "$windows_title"
+    sudo grub-set-default "$windows_title"
 
     if test $status -eq 0
         echo "Rebooting into Windows..."
