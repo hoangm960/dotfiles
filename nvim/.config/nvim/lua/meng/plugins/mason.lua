@@ -7,6 +7,10 @@ return {
     },
     opts = {
         servers = {
+            ruby_lsp = {},
+            html = {
+                filetypes = { "html", "templ", "eruby" },
+            },
             lua_ls = {
                 settings = {
                     Lua = {
@@ -74,6 +78,8 @@ return {
         mason_lspconfig.setup({
             automatic_enable = true,
             ensure_installed = {
+                "ruby_lsp",
+                "rubocop",
                 "lua_ls",
                 "vtsls",
                 "html",
@@ -137,7 +143,12 @@ return {
                 vim.keymap.set("n", "K", vim.lsp.buf.hover, keyopts)
 
                 keyopts.desc = "Restart LSP"
-                vim.keymap.set("n", "<leader>rs", ":LspRestart<CR>", keyopts)
+                vim.keymap.set(
+                    "n",
+                    "<leader>rs",
+                    vim.fn.exists(":lsp") == 2 and ":lsp restart<CR>" or ":LspRestart<CR>",
+                    keyopts
+                )
 
                 vim.keymap.set("i", "<C-h>", function()
                     vim.lsp.buf.signature_help()

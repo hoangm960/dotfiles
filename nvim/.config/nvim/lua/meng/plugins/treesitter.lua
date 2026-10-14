@@ -3,6 +3,9 @@ return {
 		"nvim-treesitter/nvim-treesitter",
 		branch = "main",
 		event = { "BufReadPre", "BufNewFile" },
+		dependencies = {
+			"RRethy/nvim-treesitter-endwise",
+		},
 		build = ":TSUpdate",
 		config = function()
 			local treesitter = require("nvim-treesitter")
@@ -31,6 +34,8 @@ return {
 					"vim",
 					"gitignore",
 					"vimdoc",
+					"ruby",
+					"embedded_template",
 				},
 				incremental_selection = {
 					enable = true,
@@ -41,6 +46,9 @@ return {
 					},
 				},
 				additional_vim_regex_highlighting = false,
+				endwise = {
+					enable = true,
+				},
 			})
 		end,
 	},
