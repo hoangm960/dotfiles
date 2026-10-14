@@ -71,6 +71,12 @@ return {
                 },
             },
         },
+        terminal = {
+            win = {
+                position = "float",
+                border = "rounded",
+            },
+        },
     },
     keys = function()
         return {
@@ -163,6 +169,14 @@ return {
                     Snacks.picker.undo()
                 end,
                 desc = "[U]ndo [H]istory",
+            },
+            {
+                "<leader>te",
+                function()
+                    Snacks.terminal()
+                end,
+                mode = { "n", "t" },
+                desc = "Toggle [T]erminal",
             },
         }
     end,
