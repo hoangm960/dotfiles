@@ -27,7 +27,7 @@ window-rule {
 
 // @id=wr_1776081641927857308 @name=thunar operations
 window-rule {
-    match app-id="^thunar$" title="^(File Operation Progress|Rename).*$"
+    match app-id="^thunar$" title="^(File Operation Progress|Rename|Extract).*$"
     open-floating true
 }
 
@@ -41,4 +41,22 @@ window-rule {
 window-rule {
     match app-id="^jetbrains-studio$" title="^Welcome to Android Studio$"
     open-floating true
+}
+
+// @id=dms-floating-windows @name=DMS Floating Windows
+window-rule {
+    match app-id="^com.danklinux.dms$"
+    open-floating true
+}
+
+// @id=dms-updater @name=DMS Updater
+window-rule {
+    match app-id="^com.danklinux.dms$" title="^Updater$"
+    open-floating false
+}
+
+// @id=dms-window-opaque @name=DMS Window Opaque
+window-rule {
+    match app-id="^com\\.danklinux\\.dms$"
+    opacity 1.00
 }
