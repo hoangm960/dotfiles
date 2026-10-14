@@ -105,5 +105,6 @@ keymap.set("t", "<M-h>", "<Left>", { silent = true, desc = "Left" })
 keymap.set("t", "<M-j>", "<Down>", { silent = true, desc = "Down" })
 keymap.set("t", "<M-k>", "<Up>", { silent = true, desc = "Up" })
 keymap.set("t", "<M-l>", "<Right>", { silent = true, desc = "Right" })
+keymap.set("t", "<C-[>", "<C-\\><C-n>", { desc = "Exit terminal insert mode", silent = true })
 
 keymap.set("n", "<C-a>", "ggVG", { silent = true, desc = "Select All" })
