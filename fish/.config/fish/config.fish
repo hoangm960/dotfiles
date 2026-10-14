@@ -16,3 +16,4 @@ function y
 	end
 	rm -f -- "$tmp"
 end
+mise activate fish | source
