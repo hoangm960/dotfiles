@@ -41,9 +41,9 @@ keymap.set("n", "x", '"_x', opts)
 keymap.set("n", "<leader>sr", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]], { desc = "[S]tring [R]eplace" })
 keymap.set(
     "n",
-    "<leader>src",
+    "<leader>sR",
     [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gc<Left><Left><Left>]],
-    { desc = "[S]tring [R]eplace with [C]onfirmation" }
+    { desc = "[S]tring [R]eplace with Confirmation" }
 )
 
 vim.api.nvim_create_autocmd("TextYankPost", {
@@ -56,10 +56,6 @@ vim.api.nvim_create_autocmd("TextYankPost", {
 
 keymap.set("n", "<leader>sh", "<C-w>v", { desc = "[S]plit window [H]orizontally", silent = true })
 keymap.set("n", "<leader>sv", "<C-w>s", { desc = "[S]plit window [V]ertically", silent = true })
-keymap.set("n", "<C-h>", "<C-w>h", { desc = "Focus on left window", silent = true })
-keymap.set("n", "<C-j>", "<C-w>j", { desc = "Focus on below window", silent = true })
-keymap.set("n", "<C-k>", "<C-w>k", { desc = "Focus on above window", silent = true })
-keymap.set("n", "<C-l>", "<C-w>l", { desc = "Focus on right window", silent = true })
 keymap.set(
     "n",
     "<C-Right>",

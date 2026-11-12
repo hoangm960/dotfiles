@@ -14,7 +14,7 @@ return {
         { "<leader>tb", ":Gitsigns toggle_current_line_blame<CR>", desc = "Toggle blame line" },
         { "<leader>hd", ":Gitsigns diffthis<CR>",                  desc = "Diff this" },
         { "<leader>hD", ":Gitsigns diffthis '~'<CR>",              desc = "Diff this ~" },
-        { "<leader>td", ":Gitsigns toggle_deleted<CR>",            desc = "Toggle deleted" },
+        { "<leader>tD", ":Gitsigns toggle_deleted<CR>",            desc = "Toggle deleted" },
     },
     opts = {
         signs = {

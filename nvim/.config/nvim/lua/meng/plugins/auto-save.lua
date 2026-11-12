@@ -3,7 +3,7 @@ return {
     version = "^1.0.0",
     event = { "InsertLeave", "TextChanged" },
     keys = {
-        { "<leader>as", "<cmd>ASToggle<CR>", desc = "Toggle [A]uto-[S]ave" },
+        { "<leader>ts", "<cmd>ASToggle<CR>", desc = "[T]oggle Auto-[S]ave" },
     },
     opts = {
         debounce_delay = 5000, -- 5 seconds
