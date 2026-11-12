@@ -7,6 +7,14 @@ return {
 				filter = { event = "notify", find = "No information available" },
 				opts = { skip = true },
 			},
+			{
+				filter = {
+					event = "msg_show",
+					kind = "",
+					find = "%d+ lines? [<>]ed %d+ time",
+				},
+				opts = { skip = true },
+			},
 		},
 		presets = {
 			lsp_doc_border = true,
