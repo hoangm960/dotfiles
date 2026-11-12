@@ -3,8 +3,9 @@ binds {
     Mod+E {spawn "thunar";}
     Mod+Ctrl+Shift+P {spawn-sh "$TERMINAL -e $HOME/.config/niri/scripts/open_project.sh";}
     Mod+Escape {spawn "dms" "ipc" "call" "powermenu" "open";}
-    Mod+Ctrl+Shift+S {spawn-sh "$HOME/.config/niri/scripts/school_mode.sh";}
-    Mod+Shift+S { screenshot; }
+    Mod+Ctrl+Shift+S {spawn-sh "$HOME/.config/niri/scripts/outdoor_mode.sh";}
+    Mod+Ctrl+Shift+T {spawn-sh "$HOME/.config/niri/scripts/ocr.sh";}
+    Mod+Shift+S {spawn "dms" "ipc" "call" "quickCapture" "screenshot" "region" "edit";}
     Mod+Shift+Alt+S {spawn "localsend";}
     Mod+Shift+B {spawn "brave-origin-nightly";}
     Mod+Shift+Alt+B {spawn "zen-browser";}
