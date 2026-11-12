@@ -1,4 +1,4 @@
-// DMS Window Rules - Managed by DankMaterialShell
+// DMS Window Rules - Managed by Dux Modular Shell
 // Do not edit manually - changes may be overwritten
 
 // @id=wr_1776081228473093531 @name=All Windows
@@ -45,18 +45,19 @@ window-rule {
 
 // @id=dms-floating-windows @name=DMS Floating Windows
 window-rule {
-    match app-id="^com.danklinux.dms$"
+    match app-id="^(dev\\.duxlabs\\.shell|com\\.danklinux\\.dms)$"
     open-floating true
 }
 
-// @id=dms-updater @name=DMS Updater
+// @id=wr_1794118417370887565 @name=System Update
 window-rule {
-    match app-id="^com.danklinux.dms$" title="^Updater$"
+    match app-id="^dev\\.duxlabs\\.shell$" title="^DMS — System Update \\(yay\\)$"
     open-floating false
+    open-on-output "eDP-1"
 }
 
 // @id=dms-window-opaque @name=DMS Window Opaque
 window-rule {
-    match app-id="^com\\.danklinux\\.dms$"
+    match app-id="^(dev\\.duxlabs\\.shell|com\\.danklinux\\.dms)$"
     opacity 1.00
 }
