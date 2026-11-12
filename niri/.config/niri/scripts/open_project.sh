@@ -53,12 +53,30 @@ find_mono_repo_projects() {
   done | sort -rn | cut -d' ' -f2-
 }
 
+is_rails_project() {
+  local dir="$1"
+  [[ -f "$dir/Gemfile" && ( -f "$dir/bin/rails" || -f "$dir/config/application.rb" ) ]]
+}
+
+find_rails_projects() {
+  for root in "${PROJECT_ROOTS[@]}"; do
+    expanded_path=$(eval echo "$root")
+    find "$expanded_path" -mindepth 1 -maxdepth 3 \
+      -type f -name "Gemfile" -printf '%h\n' 2>/dev/null
+  done | sort -u | while read -r dir; do
+    is_rails_project "$dir" || continue
+    timestamp=$(stat -c '%Y' "$dir")
+    echo "$timestamp $dir"
+  done | sort -rn | cut -d' ' -f2-
+}
+
 find_web_projects() {
   local web_path="/run/media/meng/Data/Programming/Web"
   [[ -d "$web_path" ]] || return
   find "$web_path" -mindepth 1 -maxdepth 2 \
     -type d \( -name ".git" -o -name ".tmuxinator" \) -printf '%h\n' 2>/dev/null | sort -u | while read -r dir; do
     has_mono_repo_structure "$dir" && continue
+    is_rails_project "$dir" && continue
     timestamp=$(stat -c '%Y' "$dir")
     echo "$timestamp $dir"
   done | sort -rn | cut -d' ' -f2-
@@ -81,6 +99,8 @@ elif [[ "$selected_config" == "single_project_web_dev" ]]; then
   project_list=$(find_web_projects)
 elif [[ "$selected_config" == "python" ]]; then
   project_list=$(find_python_projects)
+elif [[ "$selected_config" == "ruby_on_rails" ]]; then
+  project_list=$(find_rails_projects)
 else
   project_list=$(find_all_projects)
 fi
