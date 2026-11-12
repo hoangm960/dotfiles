@@ -3,7 +3,6 @@ set -e
 
 echo "=== Installing packages ==="
 
-# System & Base
 echo "Installing System & Base packages..."
 sudo pacman -S --needed \
     base \
@@ -27,7 +26,6 @@ sudo pacman -S --needed \
     wl-clipboard \
     wtype
 
-# Shell & CLI
 echo "Installing Shell & CLI packages..."
 sudo pacman -S --needed \
     starship \
@@ -40,7 +38,6 @@ sudo pacman -S --needed \
     git \
     yazi
 
-# Development
 echo "Installing Development packages..."
 sudo pacman -S --needed \
     bun \
@@ -49,9 +46,6 @@ sudo pacman -S --needed \
     lazygit \
     github-cli \
     yarn \
-    sassc \
-    cli11 \
-    qt6-shadertools \
     fd \
     tree-sitter-cli \
     uv \
@@ -59,12 +53,10 @@ sudo pacman -S --needed \
     code \
     matugen
 
-# System Tools
 echo "Installing System Tools packages..."
 sudo pacman -S --needed \
     timeshift
 
-# Audio
 echo "Installing Audio packages..."
 sudo pacman -S --needed \
     pipewire \
@@ -72,41 +64,37 @@ sudo pacman -S --needed \
     wireplumber \
     pavucontrol
 
-# Media & Graphics
 echo "Installing Media & Graphics packages..."
 sudo pacman -S --needed \
     vlc \
     imagemagick \
     imv \
-    file-roller
+    file-roller \
+    tesseract \
+    tesseract-data-eng \
+    tesseract-data-vie \
+    zbar \
+    img2pdf
 
-# AUR Packages (requires yay)
 if command -v yay &>/dev/null || command -v pacman &>/dev/null; then
-    # Check if yay is available, install if not
     if ! command -v yay &>/dev/null; then
         echo "Installing yay from AUR..."
         sudo pacman -S --needed yay
     fi
 
-    # AUR Helpers & Tools
     echo "Installing AUR Helpers & Tools..."
     yay -S --needed \
-        cpptrace-debug \
-        dsearch-bin \
-        yay-debug
+        dsearch-bin
 
-    # GUI & Theming (AUR)
     echo "Installing GUI & Theming packages..."
     yay -S --needed \
         gtk-engine-murrine \
         tela-circle-icon-theme-dracula
 
-    # Display & Graphics (AUR)
     echo "Installing Display & Graphics packages..."
     yay -S --needed \
         greetd-dms-greeter-git
 
-    # Applications (AUR)
     echo "Installing AUR applications..."
     yay -S --needed \
         spicetify-bin \
@@ -115,7 +103,6 @@ if command -v yay &>/dev/null || command -v pacman &>/dev/null; then
         localsend-bin \
         zen-browser-bin \
         niri \
-        quickshell-git \
         cava \
         onlyoffice-bin \
         brave-origin-nightly-bin \
@@ -123,7 +110,6 @@ if command -v yay &>/dev/null || command -v pacman &>/dev/null; then
         yaak \
         xdg-terminal-exec-git
 
-    # GUI Tools (official repos)
     echo "Installing GUI Tools packages..."
     sudo pacman -S --needed \
         nwg-look \
@@ -138,21 +124,18 @@ if command -v yay &>/dev/null || command -v pacman &>/dev/null; then
         noto-fonts-emoji \
         ttf-jetbrains-mono-nerd
 
-    # Display & Graphics (official)
     echo "Installing Display & Graphics packages..."
     sudo pacman -S --needed \
-        dms-shell \
+        dux-shell \
+        dux-gop \
         nvidia-open \
-        wayland-protocols \
         nvidia-utils \
         nvidia-settings \
         xwayland-satellite
 fi
 
-# Applications (official)
 echo "Installing Applications..."
 sudo pacman -S --needed \
-    chromium \
     opencode
 
 echo "=== Package installation complete ==="
