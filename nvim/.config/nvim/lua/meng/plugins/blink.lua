@@ -21,6 +21,35 @@ return {
             ghost_text = { enabled = true },
             documentation = { auto_show = true },
         },
+        sources = {
+            default = { "lsp", "path", "snippets", "buffer" },
+            providers = {
+                lsp = {
+                    fallbacks = {},
+                },
+                path = {
+                    fallbacks = {},
+                },
+                buffer = {
+                    score_offset = 0,
+                    opts = {
+                        get_bufnrs = function()
+                            return vim.tbl_filter(function(bufnr)
+                                return vim.bo[bufnr].buftype == "" and vim.bo[bufnr].buflisted
+                            end, vim.api.nvim_list_bufs())
+                        end,
+                    },
+                },
+                snippets = {
+                    opts = {
+                        extended_filetypes = {
+                            ruby = { "rails", "rspec", "rdoc" },
+                            eruby = { "html", "rails" },
+                        },
+                    },
+                },
+            },
+        },
     },
     opts_extend = { "sources.default" },
 }
